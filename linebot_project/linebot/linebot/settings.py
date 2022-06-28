@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-07br8hi(@^=df_jdtf#&3eh8u2#u_0o&$m=p)2$y9g8u6zu4($
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# add cors
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+       'http://localhost:3000',
+)
 
 # Application definition
 
@@ -37,9 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # add getIdToken APP
+    'getIdToken',
+    'rest_framework',
+    # add cors
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    # add cors
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -73,10 +84,17 @@ WSGI_APPLICATION = 'linebot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'linebot_db',
+        'USER': 'xiaoge',
+        'PASSWORD': 'test123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
