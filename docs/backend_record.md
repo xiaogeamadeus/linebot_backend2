@@ -29,9 +29,14 @@ POST
 
 
 #### Create Database 
-User_Table
+USER_TABLE
+attributes: User_id(LINE USER_ID), name, picture, createdAt
 
+BOT_TABLE
+attributes: Bot_id, developerId flowChart, name, createdAt, updateAt
 
+ACTIVATION_TABLE
+attributes: Bot_id, User_id(uniqle)
 
 #### Data Structure
 
