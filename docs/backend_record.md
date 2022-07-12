@@ -1,32 +1,36 @@
 ## Backend's Work
 Member: Ikeoku, Hisatomi, Wang
 
-#### Create API
+#### Create API for frontend
 1. Get the user id.
 POST /login idToken/picture
 http://localhost/login/getIdToken 
 request:"yes"
 
-3. The list of line_bots which is created by the user.
+2. The list of line_bots which is created by the user.
 GET /bot 
 
-4. The details of bot.
+3. The details of bot.
 GET /bot/:bot_id 
 
-5. Create a new bot.
+4. Create a new bot.
 POST /bot 
 
-6. Renew the detail of bot.
+5. Renew the detail of bot.
 PUT /bot/:bot_id 
 
-7. Delete the bot.
+6. Delete the bot.
 DELETE /bot/:bot_id
 
-8. Activate a user.
+7. Activate a user.
 POST /user/:user_id
 
-9. Get the messages from the user(by line platform)
+   
+#### Connecting with Line Platform(message API)
+When user send some message or follow your official account, The line platform will send a POST request to your server.
+1. Get messages/follow information from the user(by line platform)
 POST 
+
 
 
 
