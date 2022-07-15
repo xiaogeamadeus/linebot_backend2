@@ -29,7 +29,7 @@ CREATE DATABASE linebot_db;
 5. DBの設定の追加
 
 
-`local_settings.example.py`をコピーして、`local_settings.py`に変更。DB_XXXの値を設定。
+`.env.example`をコピーして、`.env`にrename、正しい値を設定する。
 
 
 6. マイグレーションの実行
