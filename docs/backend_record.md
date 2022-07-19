@@ -8,23 +8,34 @@ http://localhost/login/getIdToken
 request:"yes"
 
 2. The list of line_bots which is created by the user. (success)
-GET /bot 
+GET getIdToken/bot 
 
 3. The details of bot. (success)
-GET /bot/:bot_id 
+GET getIdToken/bot/:bot_id 
 
 4. Create a new bot. (success)
-POST /bot idToken
+POST getIdToken/bot 
+{
+"bot_id":"",
+"name":"",
+"developerId":"",
+"flowChart":"",
+}
 
 5. Renew the detail of bot. (success)
-PUT /bot/:bot_id
+PUT getIdToken/bot/:bot_id
+{
+}
 
 6. Delete the bot. (success)
-DELETE /bot/:bot_id
+DELETE getIdToken/bot/:bot_id
 
 7. Activate a user. (success)
-POST /bot/activate/:bot_id + idToken
-{user_id, bot_id}
+POST getIdToken/activate
+{
+"user_id":"", 
+"bot_id":""
+}
 
 
 
