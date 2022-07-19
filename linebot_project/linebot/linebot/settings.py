@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'linebot.wsgi.application'
 
 env = environ.Env()
 
-READ_ENV_FILE = env.bool('DJANGO_READ_ENV_FILE', default=True)
+READ_ENV_FILE = env.bool('DJANGO_READ_ENV_FILE', default=False)
 if READ_ENV_FILE:
     env_file = str(os.path.join(BASE_DIR, '.env'))
     env.read_env(env_file)
