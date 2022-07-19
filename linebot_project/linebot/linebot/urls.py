@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('login/', include('getIdToken.urls')),
+    path('getIdToken/', include('getIdToken.urls')),
     path('admin/', admin.site.urls),
     path('line_bot_maker/', include('connectToLine.urls'))
 ]
