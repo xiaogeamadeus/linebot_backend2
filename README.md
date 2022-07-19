@@ -4,35 +4,38 @@ Created by students in Kyoto University
 
 # setup
 
-1. postgresの導入
+1. postgresの導入 / Import the Postgres
 
-2. 仮想環境の作成
+2. 仮想環境の作成 / Create the virtual environment
 
 ```
-python -m venv [仮想環境の名前]
+python -m venv [the name of virtual environment]
 ```
 
-3. ライブラリのインストール
+3. ライブラリのインストール / Install the requirements environment 
 
 ```
 pip install -r requirements.txt
 ```
 
-4. データベースの作成
+4. データベースの作成 / Create the database
 
 データベースのコンソールにはいって以下のSQLを実行
+Go into the console of database, and run the SQL code below.
 
 ```
 CREATE DATABASE linebot_db;
 ```
 
-5. DBの設定の追加
+5. DBの設定の追加 / Add the settings of database
 
 
 `.env.example`をコピーして、`.env`にrename、正しい値を設定する。
 
+copy the `.env.example` and rename it to`.env`. Then set the right value.
 
-6. マイグレーションの実行
+
+6. マイグレーションの実行 / Migration Execution
 
 ```
 python manage.py migrate
