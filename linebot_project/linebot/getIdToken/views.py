@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from .models import Bot
+from .models import Activation
 from django.db.models import Q
 from datetime import datetime
 from django.core import serializers
@@ -102,3 +103,19 @@ def update(request, id):
     bot_dict = model_to_dict(bot)
 
     return HttpResponse(json.dumps(bot_dict))
+
+def activate(request):
+    if request.method != 'POST':
+        return HttpResponse('Only DELETE requests are allowed')
+
+    body = json.loads(request.body)
+
+    activateUser = Activation(
+        bot_id=body['bot_id'],
+        user_id=body['user_id'],
+    )
+
+    activateUser.save()
+    activateUser_dict = model_to_dict(activateUser)
+
+    return HttpResponse(json.dumps(activateUser_dict))
