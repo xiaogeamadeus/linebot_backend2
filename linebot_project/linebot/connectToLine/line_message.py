@@ -10,7 +10,7 @@ reply_endpoint_URL = "https://api.line.me/v2/bot/message/reply"
 accessToken = "XVwj5RzYQoB6a0c8423Xv2lDoxbmGEctHar5XObxGIKHV54xgmuuKUZx09eya+aujZ8/06WpI5PABJ9wP/UpgMKaxNoYZ/OZevpOGI6Vs3MOqyxiyuEO/0q1tEhUWJs4r089fDpC3NGAhzgGgwbAgwdB04t89/1O/w1cDnyilFU="
 header = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer' + accessToken
+    'Authorization': 'Bearer ' + accessToken
 }
 
 
@@ -30,7 +30,7 @@ class lineMessage():
             'messages': self.messages
         }
         print(body)
-        req = urllib.request.Request(reply_endpoint_URL, json.dump(body).encode(), header)
+        req = urllib.request.Request(reply_endpoint_URL, json.dumps(body).encode(), header)
         try:
             with urllib.request.urlopen(req) as res:
                 body = res.read()

@@ -32,9 +32,10 @@ import hmac
 def messagePost(request):
     if request.method == 'POST':
         request = json.loads(request.body.decode('utf-8'))
-        data = request['events'][0]
-        message = data['message']
-        reply_token = data['replyToken']
-        line_message = lineMessage(message_creater.create_single_text_message(message['text']))
-        line_message.reply(reply_token)
+        events = request['events']
+        for event in events:
+            message = event['message']
+            reply_token = event['replyToken']
+            line_message = lineMessage(message_creater.create_single_text_message(message['text']))
+            line_message.reply(reply_token)
         return HttpResponse("ok")
