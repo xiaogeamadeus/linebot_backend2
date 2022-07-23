@@ -13,7 +13,7 @@ class Bot(models.Model):
     bot_id = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     developerId = models.CharField(max_length=100)
-    flowChart = models.CharField(max_length=100)
+    flowChart = models.TextField(max_length=100)
     createdAt = models.CharField(max_length=100)
     updateAt = models.CharField(max_length=100)
 

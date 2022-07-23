@@ -36,6 +36,7 @@ def messagePost(request):
         for event in events:
             message = event['message']
             reply_token = event['replyToken']
+            user_id = event['source']['userId']
             line_message = lineMessage(message_creater.create_single_text_message(message['text']))
-            line_message.reply(reply_token)
+            line_message.reply(reply_token, user_id)
         return HttpResponse("ok")

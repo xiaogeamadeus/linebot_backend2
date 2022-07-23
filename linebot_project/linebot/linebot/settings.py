@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1','.ngrok.io','kulinebotmaker.herokuapp.
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
        'http://localhost:3000',
+       'https://0.0.0.0:3000',
 )
 
 # Application definition
