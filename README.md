@@ -38,5 +38,11 @@ copy the `.env.example` and rename it to`.env`. Then set the right value.
 6. マイグレーションの実行 / Migration Execution
 
 ```
-python manage.py migrate
+DJANGO_READ_ENV_FILE=True python manage.py migrate
+```
+
+7. 開発サーバの起動
+8. 
+```
+DJANGO_READ_ENV_FILE=True python manage.py runserver 8000
 ```

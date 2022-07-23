@@ -95,7 +95,7 @@ def update(request, id):
         bot.developerId=body['developerId']
 
     if "flowChart" in body:
-        bot.flowChart=request['flowChart']
+        bot.flowChart=body['flowChart']
 
     bot.updateAt=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
