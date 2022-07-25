@@ -1,1 +1,3 @@
-web: gunicorn linebot:manage
+release: python manage.py migrate
+web: gunicorn linebot.wsgi
+
