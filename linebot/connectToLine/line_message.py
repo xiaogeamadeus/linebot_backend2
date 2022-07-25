@@ -1,11 +1,7 @@
 import json
 import environ
-import os
 import ssl
 import urllib.request
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 from .utils import message_creater
 from getIdToken.models import Activation, Bot
 
