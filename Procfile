@@ -1,1 +1,1 @@
-web: python ./linebot_project/linebot/manage.py runserver
+web: gunicorn ./linebot_project/linebot.wsgi
