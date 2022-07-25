@@ -1,1 +1,1 @@
-web: gunicorn linebot.wsgi
+web: gunicorn linebot:manage

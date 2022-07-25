@@ -3,7 +3,7 @@ import environ
 import ssl
 import urllib.request
 from .utils import message_creater
-from getIdToken.models import Activation, Bot
+from linebot.getIdToken.models import Activation, Bot
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
