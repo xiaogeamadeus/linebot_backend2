@@ -1,3 +1,4 @@
+from rest_framework import status
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
@@ -21,8 +22,10 @@ def getIdToken(request):
             return HttpResponse('ERROR: It is a wrong input.')
 
 def root(request):
+    developerId = request.GET.get('developerId')
+    print(developerId)
     if request.method == 'GET':
-        return index(request)
+        return index(request, developerId)
     elif request.method == 'POST':
         return create(request)
 
@@ -38,8 +41,8 @@ def id(request, id):
 
     return HttpResponse('Only GET and DELETE requests are allowed')
 
-def index(request):
-    bots = Bot.objects.all()
+def index(request, developerId):
+    bots = Bot.objects.filter(developerId = developerId)
 
     return HttpResponse(serializers.serialize('json', bots))
 
@@ -110,12 +113,13 @@ def activate(request):
 
     body = json.loads(request.body)
 
-    activateUser = Activation(
-        bot_id=body['bot_id'],
-        user_id=body['user_id'],
+    _, created = Activation.objects.update_or_create(
+      bot_id=body['bot_id'],
+      user_id=body['user_id'],
+      defaults={}
     )
 
-    activateUser.save()
-    activateUser_dict = model_to_dict(activateUser)
-
-    return HttpResponse(json.dumps(activateUser_dict))
+    if created:
+      return HttpResponse("Activated")
+    else:
+      return HttpResponse("Activated", status=status.HTTP_409_CONFLICT)
