@@ -1,5 +1,5 @@
 # linebot_backend2
-The backend of project "Line_bot"
+The backend of project "Line_bot_maker"
 Created by students in Kyoto University
 
 - [Web App](https://lbm.vercel.app/)
@@ -7,11 +7,11 @@ Created by students in Kyoto University
 - [Presentation](https://docs.google.com/presentation/d/1ppaFRecLssDuJEaxndWJUHQG2cfsEdfi/edit#slide=id.p1)
 
 
-# tech stack
+# Technical stack
 
 - Python / Django / PostgreSQL
 
-# setup
+# Setup
 
 1. postgresの導入 / Import the Postgres
 
