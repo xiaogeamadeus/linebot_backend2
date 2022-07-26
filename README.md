@@ -10,6 +10,7 @@ Created by students in Kyoto University
 # Technical stack
 
 - Python / Django / PostgreSQL
+- Server: ngrok
 
 # Setup
 
