@@ -7,7 +7,7 @@ Created by students in Kyoto University
 - [Presentation](https://docs.google.com/presentation/d/1ppaFRecLssDuJEaxndWJUHQG2cfsEdfi/edit#slide=id.p1)
 
 
-# TechStack
+# tech stack
 
 - Python / Django / PostgreSQL
 
