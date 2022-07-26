@@ -2,6 +2,11 @@
 The backend of project "Line_bot"
 Created by students in Kyoto University
 
+- [Web App](https://lbm.vercel.app/)
+- [Front-end repository](https://github.com/yuta-ike/line-bot-maker-front)
+- [Presentation](https://docs.google.com/presentation/d/1ppaFRecLssDuJEaxndWJUHQG2cfsEdfi/edit#slide=id.p1)
+
+
 # setup
 
 1. postgresの導入 / Import the Postgres
