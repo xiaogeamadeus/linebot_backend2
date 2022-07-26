@@ -7,6 +7,10 @@ Created by students in Kyoto University
 - [Presentation](https://docs.google.com/presentation/d/1ppaFRecLssDuJEaxndWJUHQG2cfsEdfi/edit#slide=id.p1)
 
 
+# TechStack
+
+- Python / Django / PostgreSQL
+
 # setup
 
 1. postgresの導入 / Import the Postgres
