@@ -25,12 +25,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','.ngrok.io','kulinebotmaker.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','.ngrok.io','kulinebotmaker.herokuapp.com', '0.0.0.0', 'lbm.vercel.app']
 # add cors
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
        'http://localhost:3000',
        'https://0.0.0.0:3000',
+       'https://lbm.vercel.app'
 )
 
 # Application definition

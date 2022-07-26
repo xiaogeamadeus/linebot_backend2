@@ -37,9 +37,7 @@ class lineMessage():
 
         data = {
             'message': self.messages[0]['text'],
-            # 'flowchart': bot.flowChart,
-            # ↓ テスト用
-            'flowchart': '[{\"id\":\"5\",\"node\":{\"id\":\"5\",\"node\":{\"label\":\"テキスト入力\",\"color\":\"#06c755\",\"nodeType\":\"textInputNode\"},\"pos\":{\"x\":450,\"y\":107},\"inPoints\":[],\"outPoints\":[{\"type\":\"number\",\"label\":\"confirmed\",\"limit\":null}],\"createrInputValue\":\"\",\"isInitialNode\":false,\"type\":\"textInputNode\"},\"outputs\":[\"6\"]},{\"id\":\"6\",\"node\":{\"id\":\"6\",\"node\":{\"label\":\"テキスト含有\",\"color\":\"#a9a9a9\",\"nodeType\":\"includeCheckNode\"},\"pos\":{\"x\":548,\"y\":296},\"inPoints\":[{\"type\":\"number\",\"label\":\"\",\"limit\":null}],\"outPoints\":[{\"type\":\"number\",\"label\":\"yes\",\"limit\":null},{\"type\":\"number\",\"label\":\"no\",\"limit\":null}],\"createrInputValue\":\"hello\",\"isInitialNode\":false,\"type\":\"includeCheckNode\"},\"outputs\":[\"8\",\"12\"]},{\"id\":\"8\",\"node\":{\"id\":\"8\",\"node\":{\"label\":\"テキスト出力\",\"color\":\"#06c755\",\"nodeType\":\"textOutputNode\"},\"pos\":{\"x\":428,\"y\":475},\"inPoints\":[{\"type\":\"number\",\"label\":\"\",\"limit\":null}],\"outPoints\":[],\"createrInputValue\":\"こんにちは\",\"isInitialNode\":false,\"type\":\"textOutputNode\"},\"outputs\":[]},{\"id\":\"12\",\"node\":{\"id\":\"12\",\"node\":{\"label\":\"テキスト出力\",\"color\":\"#06c755\",\"nodeType\":\"textOutputNode\"},\"pos\":{\"x\":691,\"y\":468},\"inPoints\":[{\"type\":\"number\",\"label\":\"\",\"limit\":null}],\"outPoints\":[],\"createrInputValue\":\"さようなら\",\"isInitialNode\":false,\"type\":\"textOutputNode\"},\"outputs\":[]}]'
+            'flowchart': bot.flowChart,
         }
 
         req = urllib.request.Request(interpreter_endpoint_URL, data=json.dumps(data).encode(), headers={"Content-Type" : "application/json"})
