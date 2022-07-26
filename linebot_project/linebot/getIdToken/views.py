@@ -114,9 +114,11 @@ def activate(request):
     body = json.loads(request.body)
 
     _, created = Activation.objects.update_or_create(
-      bot_id=body['bot_id'],
+      
       user_id=body['user_id'],
-      defaults={}
+      defaults={
+        "bot_id": body['bot_id'],
+      }
     )
 
     if created:
