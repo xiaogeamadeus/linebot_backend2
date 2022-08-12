@@ -24,5 +24,4 @@ urlpatterns = [
     path('line_bot_maker/', include('connectToLine.urls')),
     path('getIdToken/', include('getIdToken.urls')),
     path('admin/', admin.site.urls),
-    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/favicon.ico')),
 ]
