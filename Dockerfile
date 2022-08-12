@@ -12,4 +12,5 @@ RUN pip install -r requirements.txt
 
 COPY ./linebot/ /app/
 
-CMD gunicorn linebot.wsgi --bind 0.0.0.0:$PORT
+CMD python manage.py migrate && \
+    gunicorn linebot.wsgi --bind 0.0.0.0:$PORT
