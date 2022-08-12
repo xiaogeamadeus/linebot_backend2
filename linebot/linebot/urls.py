@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 from django.conf.urls import url
+from django.http import HttpResponse
 
 urlpatterns = [
+    url(r'^$', lambda r: HttpResponse("hello, world!")),
     path('line_bot_maker/', include('connectToLine.urls')),
     path('getIdToken/', include('getIdToken.urls')),
     path('admin/', admin.site.urls),
