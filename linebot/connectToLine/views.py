@@ -6,7 +6,11 @@ import json
 from .utils import message_creater
 from .line_message import lineMessage
 
-
+# import environ
+#
+# env = environ.Env()
+# channel_secret = env('LINE_CHANNEL_ACCESS_TOKEN')
+#
 # # define the function
 # def add_args(a, b):
 #     return a + b

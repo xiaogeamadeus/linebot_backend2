@@ -11,7 +11,7 @@ env = environ.Env()
 
 
 reply_endpoint_URL = "https://api.line.me/v2/bot/message/reply"
-accessToken = "XVwj5RzYQoB6a0c8423Xv2lDoxbmGEctHar5XObxGIKHV54xgmuuKUZx09eya+aujZ8/06WpI5PABJ9wP/UpgMKaxNoYZ/OZevpOGI6Vs3MOqyxiyuEO/0q1tEhUWJs4r089fDpC3NGAhzgGgwbAgwdB04t89/1O/w1cDnyilFU="
+accessToken = env('LINE_CHANNEL_ACCESS_TOKEN')
 header = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer ' + accessToken
