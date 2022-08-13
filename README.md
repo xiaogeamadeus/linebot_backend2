@@ -1,5 +1,5 @@
-# linebot_backend2
-The backend of project "Line_bot_maker"
+# ふろちゃでぼっと / Flowcha-de-bot
+The backend of project "ふろちゃでぼっと" (Flowcha-de-bot)
 Created by students in Kyoto University
 
 - [Web App](https://debot.vercel.app/ )
@@ -10,7 +10,7 @@ Created by students in Kyoto University
 # Technical stack
 
 - Python / Django / PostgreSQL
-- Server: ngrok
+- Server/deployment: docker
 
 # Setup
 
