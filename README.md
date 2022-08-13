@@ -10,7 +10,7 @@ Created by students in Kyoto University
 # Technical stack
 
 - Python / Django / PostgreSQL
-- Server/deployment: docker
+- Server/deployment: docker+Heroku
 
 # Setup
 
