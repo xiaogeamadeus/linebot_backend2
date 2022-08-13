@@ -37,3 +37,16 @@ services:
     depends_on:
       db:
         condition: service_healthy
+  pgadmin4:
+    image: dpage/pgadmin4
+    ports:
+        - 8080:80
+    volumes:
+        - ./pgadmin:/var/lib/pgadmin
+    environment:
+        PGADMIN_DEFAULT_EMAIL: user@example.com
+        PGADMIN_DEFAULT_PASSWORD: password
+    depends_on:
+      - db
+    logging:
+      driver: "syslog"
