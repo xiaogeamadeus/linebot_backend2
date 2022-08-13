@@ -29,10 +29,10 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1','.ngrok.io','kulinebotmaker.herokuapp.
 # add cors
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-       'http://localhost:3000',
-       'https://0.0.0.0:3000',
-       'https://lbm.vercel.app',
-       'https://debot.vercel.app'
+    'http://localhost:3000',
+    'https://0.0.0.0:3000',
+    'https://lbm.vercel.app',
+    'https://debot.vercel.app'
 )
 
 # Application definition
