@@ -66,6 +66,7 @@ def create(request):
         name=body['name'],
         developerId=body['developerId'],
         flowChart=body['flowChart'],
+        is_public=body['is_public'],
         createdAt=now,
         updateAt=now
     )
@@ -99,6 +100,9 @@ def update(request, id):
 
     if "flowChart" in body:
         bot.flowChart=body['flowChart']
+    
+    if "is_public" in body:
+        bot.is_public=body['is_public']
 
     bot.updateAt=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
