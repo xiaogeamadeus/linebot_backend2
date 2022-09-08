@@ -14,6 +14,7 @@ class Bot(models.Model):
     name = models.CharField(max_length=100)
     developerId = models.CharField(max_length=100)
     flowChart = models.TextField(max_length=100)
+    is_public = models.BooleanField(default=False)
     createdAt = models.CharField(max_length=100)
     updateAt = models.CharField(max_length=100)
 
