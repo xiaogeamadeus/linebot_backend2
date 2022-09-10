@@ -23,7 +23,8 @@ def getIdToken(request):
 
 def others_bot(request):
     if request.method == 'GET':
-        bots = Bot.objects.filter(is_public = True)
+        developerId = request.GET.get('developerId')
+        bots = Bot.objects.filter(is_public=True).filter(~Q(developerId=developerId))
         return HttpResponse(serializers.serialize('json', bots))
 
     return HttpResponse('Only GET requests are allowed')
