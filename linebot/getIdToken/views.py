@@ -21,6 +21,14 @@ def getIdToken(request):
         else:
             return HttpResponse('ERROR: It is a wrong input.')
 
+def others_bot(request):
+    if request.method == 'GET':
+        developerId = request.GET.get('developerId')
+        bots = Bot.objects.filter(is_public=True).filter(~Q(developerId=developerId))
+        return HttpResponse(serializers.serialize('json', bots))
+
+    return HttpResponse('Only GET requests are allowed')
+
 def root(request):
     developerId = request.GET.get('developerId')
     print(developerId)
@@ -66,6 +74,7 @@ def create(request):
         name=body['name'],
         developerId=body['developerId'],
         flowChart=body['flowChart'],
+        is_public=body['is_public'],
         createdAt=now,
         updateAt=now
     )
@@ -99,6 +108,9 @@ def update(request, id):
 
     if "flowChart" in body:
         bot.flowChart=body['flowChart']
+    
+    if "is_public" in body:
+        bot.is_public=body['is_public']
 
     bot.updateAt=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
