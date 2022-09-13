@@ -37,7 +37,7 @@ class lineMessage():
 
         data = {
             'message': self.messages[0]['text'],
-            'flowchart': bot.flowChart,
+            'flowchart': bot.flowchart,
         }
 
         req = urllib.request.Request(interpreter_endpoint_URL, data=json.dumps(data).encode(), headers={"Content-Type" : "application/json"})
@@ -51,7 +51,6 @@ class lineMessage():
                 'replyToken': reply_token,
                 'messages': message_creater.create_single_text_message(reply)
             }
-            print(body)
             req = urllib.request.Request(reply_endpoint_URL, json.dumps(body).encode(), header)
             try:
                 with urllib.request.urlopen(req) as res:
