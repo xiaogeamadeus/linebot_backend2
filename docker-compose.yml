@@ -1,5 +1,5 @@
 version: "3.9"
-   
+
 services:
   db:
     image: postgres
@@ -33,18 +33,20 @@ services:
       - DB_PORT=5432
       - SECRET_KEY=secret_key
     env_file:
-    - .env
+      - .env
     depends_on:
       db:
         condition: service_healthy
   pgadmin4:
     image: dpage/pgadmin4
     ports:
-        - 8080:80
+      - 8080:80
     volumes:
-        - ./pgadmin:/var/lib/pgadmin
+      - ./pgadmin:/var/lib/pgadmin
     environment:
-        PGADMIN_DEFAULT_EMAIL: user@example.com
-        PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DEFAULT_EMAIL: user@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
     depends_on:
       - db
+    logging:
+      driver: none
