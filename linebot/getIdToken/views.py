@@ -114,14 +114,14 @@ def delete(request, id):
     if request.method != "DELETE":
         return HttpResponse("Only DELETE requests are allowed")
 
-    user = verify_user(user)
+    user = verify_user(request)
 
     if user is None:
         return HttpResponse("Unauthorized", status=401)
 
     bot = Bot.objects.get(bot_id=id)
 
-    if bot.created_by.user_id != user.id:
+    if bot.created_by.user_id != user.user_id:
         return HttpResponse("Forbidden", status=403)
 
     bot.delete()
