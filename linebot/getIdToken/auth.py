@@ -1,7 +1,11 @@
+import environ
 import requests
 from django.http import HttpResponse
 
 from .models import Activation, Bot, User
+
+env = environ.Env()
+channel_id = env("LINE_CHANNEL_ID")
 
 
 def verify_user(request):
@@ -13,7 +17,7 @@ def verify_user(request):
     response = requests.post(
         "https://api.line.me/oauth2/v2.1/verify",
         headers={"Content-Type": "application/x-www-form-urlencoded"},
-        data={"id_token": id_token, "client_id": "1657383189"},
+        data={"id_token": id_token, "client_id": channel_id},
     ).json()
 
     if "error" in response.keys() is not None:
