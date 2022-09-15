@@ -1,0 +1,13 @@
+{
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "./venv/bin/black",
+  "editor.formatOnSave": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": true
+  // }
+}
