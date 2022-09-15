@@ -48,5 +48,3 @@ services:
         PGADMIN_DEFAULT_PASSWORD: password
     depends_on:
       - db
-    logging:
-      driver: "syslog"
