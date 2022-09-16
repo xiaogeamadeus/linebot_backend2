@@ -39,6 +39,21 @@ def others_bot(request):
     return HttpResponse("Only GET requests are allowed")
 
 
+def available_bot(request):
+    if request.method == "GET":
+        user = verify_user(request)
+        if user is None:
+            return HttpResponse("Auth failed", status=403)
+
+        bots = Bot.objects.filter(
+            Q(is_public=True) | Q(created_by=user.user_id)
+        ).order_by("-updated_at")
+        serializer = BotSerializer(bots, many=True)
+        return HttpResponse(json.dumps(serializer.data))
+
+    return HttpResponse("Only GET requests are allowed")
+
+
 def root(request):
     if request.method == "GET":
         user = verify_user(request)
@@ -167,6 +182,7 @@ def activate(request):
         user_id=body["user_id"],
         defaults={
             "bot_id": body["bot_id"],
+            "snapshot": "",
         },
     )
 
