@@ -167,6 +167,7 @@ def activate(request):
         user_id=body["user_id"],
         defaults={
             "bot_id": body["bot_id"],
+            "snapshot": "",
         },
     )
 

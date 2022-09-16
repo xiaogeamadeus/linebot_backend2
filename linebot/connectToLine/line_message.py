@@ -30,6 +30,7 @@ class lineMessage:
         data = {
             "message": self.messages[0]["text"],
             "flowchart": bot.flowchart,
+            "snapshot": activation.snapshot,
         }
 
         req = urllib.request.Request(
@@ -42,6 +43,21 @@ class lineMessage:
             res = response.read().decode(response.headers.get_content_charset())
             res_json = json.loads(res)
             reply = res_json["reply"]
+
+            if "snapshot" in res_json:
+                _, created = Activation.objects.update_or_create(
+                    user_id=activation.user_id,
+                    defaults={
+                        "snapshot": json.dumps(res_json["snapshot"]),
+                    },
+                )
+            else:
+                _, created = Activation.objects.update_or_create(
+                    user_id=activation.user_id,
+                    defaults={
+                        "snapshot": "",
+                    },
+                )
 
             body = {
                 "replyToken": reply_token,
