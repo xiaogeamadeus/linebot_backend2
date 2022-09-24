@@ -6,6 +6,9 @@ Created by students in Kyoto University
 - [Front-end repository](https://github.com/yuta-ike/line-bot-maker-front)
 - [Slide](https://docs.google.com/presentation/d/1ppaFRecLssDuJEaxndWJUHQG2cfsEdfi/edit#slide=id.p1)
 
+2022年技育展　チーム開発部門　最優秀賞受賞作品
+[Link](https://twitter.com/geek_pjt/status/1573209783695704064?s=20&t=iXZBz2nIl9heLGwwUnLmsg)
+![](docs/Geek Ten.jpeg)
 
 # Technical stack
 
