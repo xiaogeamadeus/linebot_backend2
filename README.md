@@ -8,7 +8,7 @@ Created by students in Kyoto University
 
 2022年技育展　チーム開発部門　最優秀賞受賞作品
 [Link](https://twitter.com/geek_pjt/status/1573209783695704064?s=20&t=iXZBz2nIl9heLGwwUnLmsg)
-![image1](docs/Geek Ten.jpeg)
+![image1](https://github.com/xiaogeamadeus/linebot_backend2/blob/master/docs/Geek%20Ten.jpeg)
 
 # Technical stack
 
