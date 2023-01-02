@@ -18,14 +18,16 @@ jobs:
           name: Run install requirements
           command: pip install -r requirements.txt
       - persist_to_workspace:
-          root: ~/project
+          root: ~/
           paths:
             - .
   deploy: 
     executor: heroku/default # use the default executor defined within the orb
     steps:
+      - checkout
+      - heroku/install
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - heroku/deploy-via-git:
           force: true 
 
