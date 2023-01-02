@@ -59,3 +59,7 @@ DJANGO_READ_ENV_FILE=True python manage.py migrate
 ```
 DJANGO_READ_ENV_FILE=True python manage.py runserver 8000
 ```
+
+## CI/CD
+CI: Circle CI
+CD: Circle CI + Heroku
