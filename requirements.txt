@@ -3,7 +3,11 @@ aiosignal==1.2.0
 asgiref==3。5。3
 async-timeout==4.0.2
 attrs==21.4.0
+<<<<<<< HEAD
 backports.zoneinfo==0.2.1
+=======
+backports.zoneinfo==0.2.1;python_version<"3.9"
+>>>>>>> e231e54929f14ac35b03fe23f10ca24f0d0468dd
 certifi==2022.5.18.1
 charset-normalizer==2.1.0
 distlib==0.3.4
